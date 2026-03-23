@@ -1,1 +1,1 @@
-# holbertonschool-printf
+This readme is for the printf project
