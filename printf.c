@@ -55,6 +55,9 @@ int _printf(const char *format, ...)
         {
             i++;
 
+             if (format[i] == '\0')
+                return (-1);
+
             if (format[i] == 'c')
                 count += print_char(va_arg(args, int));
             else if (format[i] == 's')
@@ -64,8 +67,7 @@ int _printf(const char *format, ...)
             else
             {
                 count += print_char('%');
-                if (format[i])
-                    count += print_char(format[i]);
+                count += print_char(format[i]);
             }
         }
         else
